@@ -1,0 +1,6 @@
+{
+  "name": "@arcade/api", "version": "1.0.0", "private": true,
+  "scripts": {"build": "tsc -p tsconfig.json", "start": "node dist/main.js", "migrate": "node migrate.cjs"},
+  "dependencies": {"@nestjs/common": "11.2.7", "@nestjs/core": "11.2.7", "@nestjs/platform-express": "11.2.7", "pg": "8.23.1", "reflect-metadata": "0.2.2", "rxjs": "7.8.2"},
+  "devDependencies": {"@types/express": "5.0.3", "@types/node": "22.18.6", "@types/pg": "8.15.5", "typescript": "5.9.3"}
+}

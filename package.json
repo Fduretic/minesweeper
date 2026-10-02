@@ -1,0 +1,28 @@
+{
+  "name": "minesweeper-arcade",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "api",
+    "web"
+  ],
+  "scripts": {
+    "build": "npm run build -w api && npm run build -w web",
+    "start": "npm run start -w web",
+    "start:api": "npm run start -w api",
+    "test": "npm run build -w api && node --test tests/engine.test.cjs",
+    "test:e2e": "playwright test",
+    "check:contract": "node scripts/check-contract.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "yaml": "2.9.1"
+  },
+  "engines": {
+    "node": ">=22.22.3 <23"
+  },
+  "overrides": {
+    "piscina": "5.3.2"
+  }
+}

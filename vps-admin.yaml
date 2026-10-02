@@ -1,0 +1,27 @@
+version: 1
+compose: compose.yaml
+public:
+  service: web
+  port: 80
+routing:
+  pathPrefix: false
+services: []
+technologies:
+  - name: Angular
+  - name: NestJS
+environment:
+  - key: POSTGRES_PASSWORD
+    description: Unique installation database password
+    required: true
+    secret: true
+    phase: runtime
+storage: []
+database:
+  service: database
+  name: app
+  user: app
+  passwordEnv: POSTGRES_PASSWORD
+migration:
+  service: api
+  command: ["node", "migrate.cjs"]
+schedules: []
